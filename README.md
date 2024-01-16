@@ -1,0 +1,7 @@
+# Python Project
+
+In this project we examine two data sets and estimate their overlap. The two sets are messy and contain flawed information, so we try to manage it in a flexible way. For example, the name jayden george in table A and jayden geomrge in table B are accepted because they are "close enough". This proximity is measured under the levenshtein distance. Furthermore, we require only 3/7 of the information types (first_name, last_name, address_1, town, date_of_birth, phone_number, soc_sec_id) to match in order to accept the data. The other information types were too small and irregular to be relevant.
+
+We use double sampling strategy to be able to manage arbitrarily big data sets in a fast way. We then use Monte-Carlo method to repeat this sampling multiple times and estimate the overlap by a p-test.
+
+Conclusion: In just 1min of coding (in my old laptop), we can say with 99.0% confidence that between 44.4-49.8% of the data in table A also belongs to table B. The main advantage of this approach is that the efficiency/effectiveness is highly independent on the size of the data tables, so even if they contained Bilions of data, the results would be similar. Obviously, allowing for a larger sample size and more Monte Carlo iterations can subtantially this interval.
